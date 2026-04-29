@@ -1,0 +1,43 @@
+---
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- Essential SEO Meta Tags -->
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	</head>
+	<body class="bg-white text-gray-900 font-sans antialiased selection:bg-blue-200">
+		<header class="border-b border-gray-100 py-6 mb-12">
+			<div class="max-w-3xl mx-auto px-6 flex justify-between items-center">
+				<a href="/" class="font-bold tracking-tight text-xl">Slipstream.</a>
+				<nav class="space-x-6 text-sm font-medium text-gray-600">
+					<a href="/" class="hover:text-gray-900 transition-colors">Blog</a>
+				</nav>
+			</div>
+		</header>
+		
+		<div class="relative min-h-screen flex flex-col items-center pb-32">
+			<main class="w-full max-w-3xl px-6">
+				<slot />
+			</main>
+		</div>
+	</body>
+</html>
