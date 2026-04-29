@@ -20,6 +20,12 @@ const { title, description } = Astro.props;
 		<meta name="description" content={description} />
 		<link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
 
+		<!-- OpenGraph Meta Tags -->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content="https://raw.githubusercontent.com/scramjetio/slipstream/main/.github/assets/hero.png" />
+		<meta property="twitter:card" content="summary_large_image" />
+
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">

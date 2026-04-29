@@ -2,6 +2,11 @@
   <h1>Slipstream</h1>
   <p><strong>A blazing fast, programmatic SEO engine for modern SaaS.</strong></p>
   <p>10,000 pages in seconds. 100/100 Lighthouse score. Powered by Astro and Tailwind CSS.</p>
+
+  <!-- Social Proof Badges -->
+  <a href="https://slipstream.scramjet.io" target="_blank"><img src="https://img.shields.io/badge/Live-Demo-2ecc71?style=flat-square&logo=cloudflarepages&logoColor=white" alt="Live Demo"></a>
+  <a href="https://github.com/scramjetio/slipstream/actions"><img src="https://img.shields.io/github/actions/workflow/status/scramjetio/slipstream/ci.yml?style=flat-square" alt="CI Status"></a>
+  <a href="https://github.com/scramjetio/slipstream/blob/main/LICENSE"><img src="https://img.shields.io/github/license/scramjetio/slipstream?style=flat-square" alt="License"></a>
 </div>
 
 ---
