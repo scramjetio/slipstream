@@ -1,4 +1,7 @@
+<!-- The Visual Hook -->
 <div align="center">
+  <img src=".github/assets/hero.png" alt="Slipstream Hero Image" width="600">
+  
   <h1>Slipstream</h1>
   <p><strong>A blazing fast, programmatic SEO engine for modern SaaS.</strong></p>
   <p>10,000 pages in seconds. 100/100 Lighthouse score. Powered by Astro and Tailwind CSS.</p>
