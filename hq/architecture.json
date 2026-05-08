@@ -1,0 +1,73 @@
+{
+  "core_purpose": "Slipstream is an Astro-based static site template designed for programmatic SEO (pSEO), turning Markdown content collections into fast, SEO-optimized HTML pages at build time. It is positioned as the publishing surface for an external AI content pipeline (Scramjet) that generates and commits articles into the repo.",
+  "status": "Prototype",
+  "architecture": {
+    "frontend": "Astro 4 with Tailwind CSS",
+    "backend": "None (static site, intended for Cloudflare Pages)",
+    "database": "None (Astro content collections / local Markdown)"
+  },
+  "main_features": [
+    {
+      "name": "Markdown-driven blog content collection",
+      "status": "Operational",
+      "files_involved": [
+        "src/content/config.ts",
+        "src/content/blog/best-crm-in-london.md"
+      ]
+    },
+    {
+      "name": "Dynamic per-article static page generation",
+      "status": "Operational",
+      "files_involved": [
+        "src/pages/blog/[slug].astro",
+        "src/pages/index.astro"
+      ]
+    },
+    {
+      "name": "SEO meta tags + OpenGraph + canonical URLs",
+      "status": "Operational",
+      "files_involved": [
+        "src/layouts/Layout.astro"
+      ]
+    },
+    {
+      "name": "Automatic XML sitemap generation",
+      "status": "Broken",
+      "files_involved": [
+        "astro.config.mjs",
+        "package.json"
+      ]
+    },
+    {
+      "name": "Tailwind Typography reader UI",
+      "status": "Operational",
+      "files_involved": [
+        "src/pages/blog/[slug].astro",
+        "tailwind.config.mjs"
+      ]
+    },
+    {
+      "name": "Reusable UI components library",
+      "status": "Stubbed",
+      "files_involved": [
+        "src/components/"
+      ]
+    },
+    {
+      "name": "Lint / format toolchain (Biome + ESLint + Husky)",
+      "status": "Broken",
+      "files_involved": [
+        "package.json",
+        "biome.json"
+      ]
+    }
+  ],
+  "technical_debt": "The @astrojs/sitemap package is declared as a dependency and advertised in the README, but it is never registered in astro.config.mjs integrations, so sitemap generation does not actually run. The astro.config.mjs site URL is still the placeholder 'https://example.com', which will produce incorrect canonical URLs and sitemap entries on deploy. The 'lint' npm script invokes eslint but there is no ESLint config or dependency in package.json, so `npm run check` will fail. The src/components/ directory is empty despite being referenced as a structural slot. Only one demo blog post exists, so the 'pSEO at 10,000 pages' claim is unverified at scale. There are no tests, no CI workflow file (the README's CI badge points to a non-existent ci.yml), the README contains TODO placeholders for a demo GIF, and the hq/fleet.yaml description ('Automated deployment and CI/CD fast-path utility') is inconsistent with the actual pSEO purpose.",
+  "active_roadmap": [
+    "No open GitHub issues found; roadmap inferred from code gaps: wire up @astrojs/sitemap integration and replace the placeholder site URL.",
+    "Add the missing CI workflow (ci.yml) referenced by the README badge, or remove the badge.",
+    "Resolve the lint toolchain mismatch by either adding ESLint config/deps or switching the `lint` script to Biome.",
+    "Populate src/components/ with the reusable building blocks the directory implies, and add the demo asset placeholder called out in the README.",
+    "Reconcile the hq/fleet.yaml description with Slipstream's actual pSEO purpose."
+  ]
+}
