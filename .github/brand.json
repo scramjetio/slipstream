@@ -1,0 +1,15 @@
+{
+  "brand_name": "slipstream",
+  "slug": "slipstream",
+  "domain": "",
+  "cloudflare_pages_url": "",
+  "social_media": {
+    "github_repo": "org/slipstream"
+  },
+  "is_public": false,
+  "colors": [
+    "#00FFCC",
+    "#1E1E2F"
+  ],
+  "image_prompt": "Sleek, venture-backed SaaS aesthetic, dark mode, vibrant neon blue and purple accents"
+}
